@@ -1,33 +1,40 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './WaptechComponents/Header'
+import Footer from './WaptechComponents/Footer'
+import Homepage from './WaptechComponents/Homepage/Homepage'
+import DataAnalytics from './WaptechComponents/Homepage/Data Analytics/DataAnalytics'
+import Farmersharing from './WaptechComponents/Navbar/FarmerToFarmer'
+import Trainings from './WaptechComponents/Navbar/Trainigs'
+import NotFound from './WaptechComponents/NotFoundPage'
+import ContactUs from './WaptechComponents/Navbar/ContactUs'
 import './App.css'
-
+import MarketLinkage from './WaptechComponents/Navbar/MarketLinkage'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <BrowserRouter>
+    <Header/>
+    <Routes >
+      <Route path='/' element={<Homepage/>} />
+      {/* the above code displays the Home page in the system */}
+      <Route path="/Data Analytics" element ={<DataAnalytics/>} />
+      {/* this code displays the Data Analytics tab */}
+      <Route path="/Farmers sharing" element={<Farmersharing/>} />
+      {/* this code displays the farmers sharing tab */}
+      <Route path="/Market linkage" element={<MarketLinkage/>} />
+      {/* this is the market linkagee tab. */}
+      <Route path="/Trainings" element={<Trainings/>} />
+      {/* this opens the trainings tab */}
+      <Route path="/Contact Us" element={<ContactUs/>} />
+      {/* the contacts tab */}
+      <Route path="*" element={<NotFound/>} />
+      {/* the contacts tab */}
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
     </>
   )
 }
