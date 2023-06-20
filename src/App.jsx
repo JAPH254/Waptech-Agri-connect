@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Header from './WaptechComponents/Header'
 import Footer from './WaptechComponents/Footer'
-import Homepage from './WaptechComponents/Homepage/Homepage'
+import Homepage from './WaptechComponents/Homepage/Data Analytics/Homepage'
 import DataAnalytics from './WaptechComponents/Homepage/Data Analytics/DataAnalytics'
 import Farmersharing from './WaptechComponents/Navbar/FarmerToFarmer'
 import Trainings from './WaptechComponents/Navbar/Trainigs'
 import NotFound from './WaptechComponents/NotFoundPage'
 import ContactUs from './WaptechComponents/Navbar/ContactUs'
+import Register from './WaptechComponents/auth.jsx/Register'
 import './App.css'
+import Login from './WaptechComponents/auth.jsx/login'
 import MarketLinkage from './WaptechComponents/Navbar/MarketLinkage'
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +22,10 @@ function App() {
     <Routes >
       <Route path='/' element={<Homepage/>} />
       {/* the above code displays the Home page in the system */}
+      <Route path='/Register' element={<Register/>}/>
+      {/* The  user registration page */}
+      <Route path='/login' element={<Login/>}/>
+      {/* this is the login page  */}
       <Route path="/Data Analytics" element ={<DataAnalytics/>} />
       {/* this code displays the Data Analytics tab */}
       <Route path="/Farmers sharing" element={<Farmersharing/>} />
@@ -32,6 +38,7 @@ function App() {
       {/* the contacts tab */}
       <Route path="*" element={<NotFound/>} />
       {/* the contacts tab */}
+   
     </Routes>
     <Footer/>
     </BrowserRouter>

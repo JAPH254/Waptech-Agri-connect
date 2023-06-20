@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
+  html{
+    box-sizing: border-box;
+  }
+.register{
+    min-height: 80vh;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+.registrationDetails{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-weight: bold; */
+    align-items: center;
+}
+.Login{
+    min-height: 80vh;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+.LoginDetails{
+gap: 5px;
+display: flex;
+flex-direction: column;
+}
+.loginButtons{
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

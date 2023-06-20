@@ -1,8 +1,21 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  box-sizing: border-box;
+}
+
 .Homepage{
 min-height: 80vh;
-min-width: 220vh;
 background-color: violet;
 text-align: center;
+display: flex;
+align-items: center;
+gap: 5px;
+
 }
 .NavigationLinks{
 display: flex;
@@ -12,39 +25,73 @@ gap: 2rem;
 .HeadContents{
   display: flex;
   background-color: lightblue;
-  gap: 30%;
+  gap: 5%;
   align-items: center;
   align-items: center;
 
 }
 .DataAnalytics{
   min-height: 80vh;
-min-width: 220vh;
+  min-width: 100vw;
 background-color: violet;
 }
 .FarmersSharing{
 min-height: 80vh;
-min-width: 220vh;
+min-width: 100vw;
 background-color: violet;
 }
 .MarketLinkage{
 min-height: 80vh;
-min-width: 220vh;
+min-width: 100vw;
 background-color: violet;
 }
 .Trainings{
 min-height: 80vh;
-min-width: 220vh;
+min-width: 100vw;
 background-color: violet;
 }
 .ContactUs{
 min-height: 80vh;
-min-width: 220vh;
+min-width: 100vw;
 background-color: violet;
 }
 .NotFound{
 min-height: 80vh;
-min-width: 220vh;
+min-width: 100vw;
 background-color: violet;
 text-align: center;
+}
+.NavigationHome{
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 20%;
+  height: 80%;
+}
+
+.Headers{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 2rem;
+}
+.Testimonials{
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.Overviews{
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.LatestUpdates{
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.FeaturedCrops{
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.ManageVids{
+  border: 2px solid black;
+  border-radius: 10px;
 }
