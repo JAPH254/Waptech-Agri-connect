@@ -13,14 +13,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    }
-.registrationDetails{
-    width: 50%;
-    display: flex;
     flex-direction: column;
-    font-family: 'Times New Roman', Times, serif;
-    /* font-weight: bold; */
+    background-color: rgb(206, 248, 206);
+    gap: 2rem;
+
+}
+.registrationDetails{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    background-color: green;
+    box-shadow: 5px 2px #888888;
+    border-radius: 4%;
+    height: 20%px;
+    flex-wrap: nowrap;
+    width:500px;
     align-items: center;
+    font-weight: bold;
+    text-align: center;
+    gap: 2rem;
+}
+.registrationDetails:hover{
+    background-color:blueviolet;
+}
+.registrationButtons{
+    display: flex;
+    gap: 4rem;
+    margin: 10px;
+    border-radius: 10%;
 }
 .Login{
     min-height: 80vh;
@@ -29,15 +49,37 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    }
-.LoginDetails{
-gap: 5px;
+    background-color: rgb(206, 248, 206);
+    gap: 2rem;
+
+}
+    
+.loginDetails{
+/* gap: 5px; */
 display: flex;
-flex-direction: column;
+flex-direction:column;
+justify-content: center;
+background-color: green;
+box-shadow: 5px 2px #888888;
+border-radius: 4%;
+height: 20%px;
+flex-wrap: nowrap;
+width:200px;
+align-items: center;
+font-weight: bold;
+
+
+
+
+
+}
+.loginDetails:hover{
+background-color: blueviolet;
 }
 .loginButtons{
-    gap: 1rem;
+    margin: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    gap: 2rem;
+    border-radius: 10%;
+
 }
