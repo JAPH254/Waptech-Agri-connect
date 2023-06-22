@@ -2,35 +2,40 @@
 import config from '../dbase/config.js';
 import sql from 'mssql';
 import bcrypt from 'bcrypt';
-import dotenv from 'dotenv'
+import jwt from 'jsonwebtoken'
 
-dotenv.config()
-
+// export const loginRequired=(req,res,next)=>{
+//     if(req.User){
+//         next();
+//     }else{
+//         return res.status{401}.json({message:'Unauthorised user'});
+//     }
+// };
 
 export const register =async(req, res)=>{
-    const {Username, Password,Email}=req.body;
+    const {Username, Password,Email, }=req.body;
     const hashedpassword=bcrypt.hashSync(Password,10);
     try {
         const userCon=await sql.connect(config.sql);
         const result =await userCon.request()
-             .input('Username',sql.VarChar, username)
-             .input('Email',sql.VarChar,email)
-             .query('SELECT * FROM Users WHERE Username=@username OR Email=@email');
+             .input("Username",sql.VarChar,Username)
+             .input("Email",sql.VarChar,Email)
+             .query("SELECT * FROM Users WHERE Username=@Username OR Email=@Email");
         const User=result.recordset[0];
         if (User){
-            res.status(409).json({error:'Ooops. User already exists'});
+            res.status(409).json({error:"Ooops. User already exists"});
         }else{
-            let pool=await sql.connect(config.sql);
-            await pool.request()
-                 .input('Username',sql.VarChar,Username)
-                 .input('Password',sql.VarChar,hashedpassword)
-                 .input('Email',sql.VarChar,Email)
-                 .query('INSERT INTO Users (Username,Password,Email)VALUES(@Username,@hashedpassword,@Email');
-                 res.status(200).send({message:'User created successfully'});
+            
+            await userCon.request()
+                 .input("Username",sql.VarChar,Username)
+                 .input("hashedpassword",sql.VarChar,hashedpassword)
+                 .input("Email",sql.VarChar,Email)
+                 .query("INSERT INTO Users(Username,Password,Email) VALUES(@Username,@hashedpassword,@Email)");
+                 res.status(200).send({message:"User created successfully"});
         }
         
-    } catch (error) {
-        res.status(500).json({error:'An error occured when registering the user'});
+    } catch (err) {
+        res.status(500).json({error:err.message});
     }
     finally{
        sql.close();  
@@ -39,5 +44,22 @@ export const register =async(req, res)=>{
 };
 
 export const login =async(req, res)=>{
-    res.send('login')
+    const{Email,Password}=req.body;
+    let Usecon=await sql.connect(config.sql);
+    const result =await Usecon.request()
+    .input("Email",sql.VarChar,Email)
+    .query('SELECT * FROM Users WHERE Email=@Email');
+    const User=result.recordset[0];
+    if (!User){
+        res.status(401).json({error:'Ooops..Failed to authenticate'});
+    }else{
+        if(!bcrypt.compareSync(Password, User.Password)){
+            res.status(401).json({error:'Wrong credentials'})
+        }else{
+            const token=jwt.sign(
+                {Username:User.Username, Email:User.Email}
+                ,config.jwt_secret, {expiresIn: '1hr'});
+                res.status(200).json({Email:User.Email,Username:User.Username, token:token});
+        }
+    }
 };
