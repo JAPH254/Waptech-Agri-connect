@@ -6,16 +6,16 @@ function Register() {
             <h2>Waptech User Registration</h2>
                 <legend><b>Personal Details</b></legend>
                 <div>
-                <label>Enter the First Name</label>
-                <input type="text" placeholder='First Name' /><br />
-                <label>Enter the Last Name</label>
-                <input type="text" placeholder='Last Name' /><br />
-                <label>Enter your Email</label>
-                <input type="email" placeholder='name@gmail.com' /><br />
-                <label>Enter the Password</label>
+                <label>Enter the Username</label>
+                <input type="text" placeholder='username' /><br />
+                <label>Enter the Email</label>
+                <input type="email" placeholder='email' /><br />
+                <label>Enter your Password</label>
                 <input type="password" placeholder='password' /><br />
-                <label>Confirm your password</label>
-                <input type="password" placeholder='confirm'/><br />
+                <label>Enter Your Role</label>
+                <input type="text" placeholder='password' /><br />
+                <label>Registration Date</label>
+                <input type="text" placeholder='date'/><br />
                 </div>
                 <div className='registrationButtons'>
                     <button style={{backgroundColor:"lightblue"}}>Register</button>

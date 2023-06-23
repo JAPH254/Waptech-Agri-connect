@@ -13,7 +13,7 @@ import jwt from 'jsonwebtoken'
 // };
 
 export const register =async(req, res)=>{
-    const {Username, Password,Email, }=req.body;
+    const {Username, Password,Email,Role,RegistrationDate}=req.body;
     const hashedpassword=bcrypt.hashSync(Password,10);
     try {
         const userCon=await sql.connect(config.sql);
@@ -30,7 +30,9 @@ export const register =async(req, res)=>{
                  .input("Username",sql.VarChar,Username)
                  .input("hashedpassword",sql.VarChar,hashedpassword)
                  .input("Email",sql.VarChar,Email)
-                 .query("INSERT INTO Users(Username,Password,Email) VALUES(@Username,@hashedpassword,@Email)");
+                 .input ("Role",sql.VarChar,Email)
+                 .input("RegistrationDate",sql.Date,RegistrationDate)
+                 .query("INSERT INTO Users(Username,Password,Email,Role,RegistrationDate) VALUES(@Username,@hashedpassword,@Email,@Role,@RegistrationDate)");
                  res.status(200).send({message:"User created successfully"});
         }
         

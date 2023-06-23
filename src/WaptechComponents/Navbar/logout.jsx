@@ -1,8 +1,8 @@
-function Trainings(){
+function Logout(){
     return(
         <div className="Trainings">
-        <p>Trainings</p>
+        <p>logout</p>
         </div>
     )
 }
-export default Trainings
+export default Logout;

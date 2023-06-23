@@ -20,11 +20,11 @@ function Header(){
 
             <div className="NavigationLinks">
                 <Link to='/' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><FaHome/>Home</Link>
-                <Link to='/Data Analytics' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}} > <FaMixcloud/>Data Analytics</Link>
                 <Link to='/Farmers sharing' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><FaRegShareSquare/>Farmers Sharing</Link>
-                <Link to='/Market linkage' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiFillAccountBook/>Market Linkage</Link>
-                <Link to='/Trainings' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiOutlineTeam/>Training</Link>
-                <Link to='/Contact Us' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiTwotonePhone/>Contact Us</Link>
+                <Link to='/Contact Us' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiTwotonePhone/>Contact Us</Link>                
+                <Link to='/Logout' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiOutlineTeam/>Log Out</Link>                
+
+
                 
             </div>
         </div>
