@@ -1,19 +1,32 @@
-
+import {useForm} from "react-hook-form"
+import * as yup from "yup"
+import {yupResolver} from "@hookform/resolvers/yup";
 import './auth.css'
 function Login() {
+    const schema=yup.object().shape({
+        Email:yup.string().required("Email is required"),
+        Password:yup.string().required("Password is required"),
+    });
+    const {register,handleSubmit,formState:{errors}}=useForm({
+        resolver:yupResolver(schema),
+    });
+    const onSubmit=(myData)=> {
+        console.log(myData)
+    }
     return (
         <div className='Login'>
             <h2>Waptech Agri-connect Login</h2>
-            <form className='loginDetails'>
+            <form className='loginDetails' onSubmit={handleSubmit(onSubmit)}>
                 
                     <legend><b>User Login</b></legend>
-                    <label>username</label>
-                    <input type="text" placeholder='username' /><br /><br />
+                    <label>Email</label>
+                    <input type="email" {...register("Email")}placeholder='Email' /><br /><br />
+                    <p>{errors.Email?.message}</p>
                     <label>Password</label>
-                    <input type="text" placeholder='password' /><br /><br />
+                    <input type="password" {...register("Password")} placeholder='password' /><br /><br />
+                    <p>{errors.Password?.message}</p>
                     <div className='loginButtons'>
-                    <button style={{backgroundColor:"lightblue",width:"50px",height:"50px"}}>Log in</button>
-                    <button style={{backgroundColor:"lightblue",height:"50px",width:"50px"}}>back</button>
+                    <input className="submitBtn" type="submit" value="submit"/>
                     </div>
               
             </form> 

@@ -51,6 +51,8 @@
     flex-direction: column;
     background-color: rgb(206, 248, 206);
     gap: 2rem;
+    
+
 
 }
     
@@ -61,25 +63,22 @@ flex-direction:column;
 justify-content: center;
 background-color: green;
 box-shadow: 5px 2px #888888;
-border-radius: 4%;
+border-radius: 10px;
 height: 20%px;
 flex-wrap: nowrap;
 width:200px;
 align-items: center;
 font-weight: bold;
-
-
-
-
-
+p
+}
+.loginDetails >p{
+    color:red;
 }
 .loginDetails:hover{
 background-color: blueviolet;
 }
-.loginButtons{
-    margin: 10px;
-    display: flex;
-    gap: 2rem;
-    border-radius: 10%;
-
+.submitBtn{
+  color:cornflowerblue;
+  border-radius: 2px;
+  border: 1px solid black;
 }
