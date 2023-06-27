@@ -5,7 +5,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import './auth.css'
 import axios from "axios";
+import { Link } from "react-router-dom"
 function Register() {
+    const navigate=useNavigate();
     const schema=yup.object().shape({
         Username:yup.string().required("Username is required"),
         Email:yup.string().required("Email is required"),
@@ -16,13 +18,14 @@ function Register() {
     const {register,handleSubmit,formState:{errors}}=useForm({
         resolver:yupResolver(schema),
     });
-    const onSubmit=(myData)=>{
-        axios.post("http://localhost:8081/auth/register",myData)
+    const onSubmit=(data)=>{
+        axios.post("http://localhost:8081/auth/register",data)
         .then((response)=>{
-            console.log(response);
+            response.data.message && alert(response.data.message)
+            navigate("/login")
         })
-        .catch((error)=>{
-            console.log(error);
+        .catch(({response})=>{
+            alert(response.data.error)
         });
     }
     return (
@@ -50,6 +53,8 @@ function Register() {
                 <div className='registrationButtons'>
                 <input className="submitBtn" type="submit" value="submit" />
                 </div>
+                <label>Already have an account</label>
+                <Link to="/login">Login instead</Link>
             </form>
         </div>
     );

@@ -9,9 +9,10 @@ import ContactUs from './WaptechComponents/Navbar/ContactUs'
 import Register from './WaptechComponents/auth.jsx/Register'
 import './App.css'
 import Login from './WaptechComponents/auth.jsx/login'
-import Logout from './WaptechComponents/Navbar/logout'
+import { Context } from './WaptechComponents/context/userContext/Context'
+import { useContext } from 'react'
 function App() {
-  const [count, setCount] = useState(0)
+  const {user}=useContext(Context)
 
   return (
     <>
@@ -24,9 +25,8 @@ function App() {
       {/* The  user registration page */}
       <Route path='/login' element={<Login/>}/>
       {/* this is the login page  */}
-      <Route path="/Farmers sharing" element={<Farmersharing/>} />
+      <Route path="/Farmers sharing" element={user ? <Farmersharing/> : <Homepage/>} />
       {/* this code displays the farmers sharing tab */}
-      <Route path="/Logout" element={<Logout/>} />
       {/* this opens the trainings tab */}
       <Route path="/Contact Us" element={<ContactUs/>} />
       {/* the contacts tab */}

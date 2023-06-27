@@ -1,31 +1,42 @@
 import { Link } from "react-router-dom"
 import hero from '../assets/hero.jpg'
 import { FaHome,FaMixcloud,FaRegShareSquare } from "react-icons/fa";
-import { AiTwotonePhone,AiOutlineTeam,AiFillAccountBook } from "react-icons/ai";
+import { AiTwotonePhone,AiOutlinePoweroff,AiFillMessage } from "react-icons/ai";
+import { Context } from "./context/userContext/Context";
+import { useContext } from "react";
+import Searchbar from "./Navbar/searchbar";
+import Logo from "./Navbar/logo";
 function Header(){
+    const {user,dispatch}=useContext(Context)
+    const handleLogout=()=>{
+        dispatch({type:"LOGOUT"});
+    };
     return(
-        
         <div className="HeadContents">
             {/* These are the contents of the header files */}
             <div className="Headers">
-            <div style={{display:'flex', flexDirection:'column',alignItems:'center'}}>
-                <span><img width={70} height={70} style={{borderRadius:'50%',border:'green solid'}} src="/src/assets/hero.jpg" alt="No Image" /></span>
-                <h3>Waptech Agriconnect</h3>
-                </div>
-            <div style={{display:'flex',flexDirection:'row',gap:'1rem'}}>
-            <input type="text"placeholder="Search Waptech" />
-               <p> <button>Search</button></p>
-            </div>
+                 <Logo/>
+                 {
+      user &&  ( <Searchbar/>)
+                 }
             </div>
 
             <div className="NavigationLinks">
                 <Link to='/' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><FaHome/>Home</Link>
-                <Link to='/Farmers sharing' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><FaRegShareSquare/>Farmers Sharing</Link>
+                {
+       !user &&(
+                <Link to='/login' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><FaRegShareSquare/>Login</Link>
+            )
+            }
+                {
+                    user && (
+                        <>
+                        <Link to='/Farmers sharing' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiFillMessage/>Farmers Sharing</Link>
                 <Link to='/Contact Us' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiTwotonePhone/>Contact Us</Link>                
-                <Link to='/Logout' style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiOutlineTeam/>Log Out</Link>                
-
-
-                
+                <Link onClick={handleLogout} style={{textDecoration:'none',display:'flex',flexDirection:'row',gap:'5px',fontWeight:'bold', color:'green'}}><AiOutlinePoweroff/>Log Out</Link>     
+                        </>
+                    )
+                }            
             </div>
         </div>
     )

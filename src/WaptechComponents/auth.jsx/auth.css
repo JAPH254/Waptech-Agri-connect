@@ -9,12 +9,11 @@
   }
 .register{
     min-height: 80vh;
-    background-color: violet;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(206, 248, 206);
+    background-color: rgb(25, 175, 25);
     gap: 2rem;
 
 }
@@ -24,14 +23,16 @@
     justify-content: center;
     background-color: green;
     box-shadow: 5px 2px #888888;
-    border-radius: 4%;
-    height: 20%px;
+    border-radius: 10px;
+    height: 70vh;
     flex-wrap: nowrap;
-    width:500px;
+    width:40%;
     align-items: center;
     font-weight: bold;
-    text-align: center;
-    gap: 2rem;
+    gap: auto;
+}
+.registrationDetails > p{
+    color: rgb(200, 36, 36);
 }
 .registrationDetails:hover{
     background-color:blueviolet;
@@ -44,12 +45,11 @@
 }
 .Login{
     min-height: 80vh;
-    background-color: violet;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(206, 248, 206);
+    background-color: rgb(25, 175, 25);
     gap: 2rem;
     
 
@@ -57,22 +57,21 @@
 }
     
 .loginDetails{
-/* gap: 5px; */
 display: flex;
 flex-direction:column;
 justify-content: center;
 background-color: green;
 box-shadow: 5px 2px #888888;
 border-radius: 10px;
-height: 20%px;
+height: 50vh;
 flex-wrap: nowrap;
-width:200px;
+width:40%;
 align-items: center;
 font-weight: bold;
-p
+
 }
 .loginDetails >p{
-    color:red;
+    color:rgb(179, 21, 21);
 }
 .loginDetails:hover{
 background-color: blueviolet;
