@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  
 }
 
 html{
@@ -77,6 +78,7 @@ text-align: center;
   align-items: center;
   padding: 10px;
   gap: 2rem;
+  
 }
 .Testimonials{
   border: 2px solid black;
@@ -102,7 +104,7 @@ text-align: center;
   height: 85vh;
   background-color:green;
   width: 20%;
-  border-radius: 10px;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -139,4 +141,25 @@ text-align: center;
   color: white;
   border-radius: 10px;
  border: solid white;
+}
+.Resources{
+  width:20%;
+  background-color: cornflowerblue;
+  height: 85vh;
+}
+.Sharing{
+  width: 60%;
+  background-color: rgb(196, 196, 240);
+  position: relative;
+  
+}
+.Createposts{
+  width: 100%;
+  position: relative;
+
+  padding: 10px;
+}
+.Footer{
+  background-color: rgb(196, 196, 240);
+  border-top: solid black 2px;
 }
