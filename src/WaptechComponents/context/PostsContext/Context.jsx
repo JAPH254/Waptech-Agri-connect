@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 import Reducer from "./Reducer";
 const INITIAL_STATE = {
-    ui: JSON.parse(localStorage.getItem("ui")) || "view"
+    ui: JSON.parse(localStorage.getItem("ui")) || "create"
 }
 
 export const Context = createContext(INITIAL_STATE);

@@ -1,6 +1,4 @@
-function Overviews(){
-    return(
-        <p>These are the Overview Features</p>
-    )
+function Overviews() {
+  return <p>These are the Overview Features</p>;
 }
-export default Overviews
+export default Overviews;

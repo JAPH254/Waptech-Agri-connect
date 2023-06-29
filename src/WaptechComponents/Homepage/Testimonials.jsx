@@ -1,6 +1,4 @@
-function Testimonials(){
-    return(
-        <p>THESE ARE THE TESTIMONIALS</p>
-    )
+function Testimonials() {
+  return <p>THESE ARE THE TESTIMONIALS</p>;
 }
-export default Testimonials
+export default Testimonials;

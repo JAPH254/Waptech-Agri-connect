@@ -11,14 +11,22 @@ html{
 
 .Homepage{
 min-height: 80vh;
-background-color: green;
+background-color: #027327;
 text-align: center;
 display: flex;
 align-items: center;
 gap: 5px;
-opacity: 80%;
+border: solid black 1px;
+flex-direction: column;
 
 }
+.viewupdates{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
 .NavigationLinks{
 display: flex;
 gap: 3rem;
@@ -28,11 +36,10 @@ font-size: 150%;
 }
 .HeadContents{
   display: flex;
-  background-color: rgb(2, 9, 84);
+  background-color:rgb(142, 172, 228);
   gap: 90px;
   align-items: center;
   flex-direction: row;
-  opacity: 80%;
 
 }
 .DataAnalytics{
@@ -40,10 +47,13 @@ font-size: 150%;
   min-width: 100vw;
 background-color: green;
 }
-.FarmersSharing{
-min-height: 80vh;
-min-width: 100vw;
-background-color: green;
+.Farmersharing{
+min-height: 85vh;
+width: 100%;
+background-color: #027327;
+display: flex;
+padding: 5px;
+gap: 1px;
 }
 .MarketLinkage{
 min-height: 80vh;
@@ -53,7 +63,7 @@ background-color: green;
 .Trainings{
 min-height: 80vh;
 min-width: 100vw;
-background-color: green;
+background-color: #027327;
 }
 .ContactUs{
 min-height: 80vh;
@@ -66,10 +76,9 @@ min-width: 100vw;
 text-align: center;
 }
 .NavigationHome{
-  border: 2px solid black;
   border-radius: 10px;
-  width: 20%;
-  height: 80%;
+  width: 100%;
+  height: auto;
 }
 
 .Headers{
@@ -101,26 +110,20 @@ text-align: center;
   border-radius: 10px;
 }
 .sidenav{
-  height: 85vh;
-  background-color:green;
+  background-color:#027327 ;
   width: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  color:rgb(6, 3, 28);
+  font-size: 30px;
+}
+.Createposts{
+  height: 75vh;
+    width: 100%;
+}
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 25px;
-}
-.Sharingboard{
-  height: 85vh;
-  background-color: green;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 25px;
-  width: 80%;
-  opacity: 50%;
-}
 .ContactUs{
   height: 85vh;
   background-color: green;
@@ -131,35 +134,108 @@ text-align: center;
   display: flex;
 }
 .ContactContent{
-  background-color: rgb(5, 5, 49);
   display: flex;
   align-content: center;
-  width: 40%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: white;
   border-radius: 10px;
- border: solid white;
+ text-align: center;
+ font-size: 40px;
+ gap: 10px;
 }
 .Resources{
   width:20%;
-  background-color: cornflowerblue;
-  height: 85vh;
+  background-color: rgb#027327;
 }
 .Sharing{
-  width: 60%;
-  background-color: rgb(196, 196, 240);
-  position: relative;
+  background-color: rgb(149, 160, 180);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width:60%;
+  border-radius: 10px;
+  
   
 }
-.Createposts{
-  width: 100%;
+.UIcomponents{
+  /* max-width: 95%; */
   position: relative;
-
-  padding: 10px;
+  padding: 20px;
+  margin: 25px;
+  display: flex;
+  background-color:#027327;
+  width: 100%;
+  height: 75vh;
+  overflow-y: scroll;
 }
+.Viewposts{
+  width: 90%;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* overflow-y: scroll; */
+  height: 85lvh;
+}
+.posts{
+  display: flex;
+  border: solid green 2px;
+  min-width: 2rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  border-radius: 5px;
+  margin: 1px;
+  max-width: 30%;
+  height: auto;
+  box-shadow: 0 2px 4px #ddd;
+  padding: 0.4rem;
+  text-align: left;
+}
+
+
+.Form > input{
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0 15px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  outline: none;
+  font-weight: 400;
+  }
+  .Form > textarea{
+    height: 65vh;
+    width: 100%;
+    resize: none;
+    padding: 2rem 3rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 1rem 2rem;
+    font-size: 15px;
+    font-size: 400;
+    outline: none;
+  }
+  .Form{
+    color: darkred;
+  }
 .Footer{
   background-color: rgb(196, 196, 240);
   border-top: solid black 2px;
 }
+.Updates{
+  border: solid white 2px;
+  height: 100%;
+}
+.posts p{
+  color: #ccc;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    font-family: sans-serif;
+}
+

@@ -9,10 +9,7 @@ const Reducer = (state, action) => {
             return {
                 ui: action.payload
             }
-            case "DISP":
-                return{
-                    ui:action.payload
-                }
+
         default:
             return state;
     }

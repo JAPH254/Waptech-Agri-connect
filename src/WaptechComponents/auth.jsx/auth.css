@@ -1,83 +1,117 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-  }
-  
-  html{
-    box-sizing: border-box;
-  }
-.register{
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(25, 175, 25);
-    gap: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+.register {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:#027327;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+.register  p{
+  color: orangered;
+}
+.form_inputs{
+  padding: 1rem;
+  width: 100%;
+}
+.form_controls{
+  line-height: 1.6;
+  width: 100%;
 
 }
-.registrationDetails{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    background-color: green;
-    box-shadow: 5px 2px #888888;
-    border-radius: 10px;
-    height: 70vh;
-    flex-wrap: nowrap;
-    width:40%;
-    align-items: center;
-    font-weight: bold;
-    gap: auto;
+label{
+  display: block;
+    margin: 0.5rem 0 0.4rem;
+    color: #f7f7f7;
+    font-weight: 400;
+    font-family: sans-serif;
+    letter-spacing: 1px;
 }
-.registrationDetails > p{
-    color: rgb(200, 36, 36);
+form input {
+  width: 100%;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  color: #888888;
+  border-radius: 0.5rem;
 }
-.registrationDetails:hover{
-    background-color:blueviolet;
+form input:focus {
+  outline: none;
 }
-.registrationButtons{
-    display: flex;
-    gap: 4rem;
-    margin: 10px;
-    border-radius: 10%;
+.registrationDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #032d11;
+  box-shadow: 5px 2px #888888;
+  border-radius: 10px;
+  /* height: 70vh; */
+  flex-wrap: nowrap;
+  width: 40%;
+  align-items: center;
+  font-weight: bold;
+  gap: auto;
+  height: min-content;
 }
-.Login{
-    min-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(25, 175, 25);
-    gap: 2rem;
-    
+.registrationDetails > p {
+  color: rgb(200, 36, 36);
+}
+.registrationDetails:hover {
+  background-color: #00210bd0;
+}
 
+.registrationButtons input:focus{
+  outline: none;
+}
+.Login {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:#027327;
+  gap: 2rem;
+  padding: 3rem 0;
+}
 
+.loginDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #032d11;
+  box-shadow: 5px 2px #888888;
+  border-radius: 10px;
+  flex-wrap: nowrap;
+  width: 40%;
+  align-items: center;
+  font-weight: bold;
+  gap: auto;
+  height: min-content;
 }
-    
-.loginDetails{
-display: flex;
-flex-direction:column;
-justify-content: center;
-background-color: green;
-box-shadow: 5px 2px #888888;
-border-radius: 10px;
-height: 50vh;
-flex-wrap: nowrap;
-width:40%;
-align-items: center;
-font-weight: bold;
+.loginDetails input{
+  padding: 20px;
+  align-items: center;
+}
+.loginDetails > p {
+  color: rgb(179, 21, 21);
+}
 
-}
-.loginDetails >p{
-    color:rgb(179, 21, 21);
-}
-.loginDetails:hover{
-background-color: blueviolet;
-}
-.submitBtn{
-  color:cornflowerblue;
-  border-radius: 2px;
-  border: 1px solid black;
+.submitBtn {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  color: #032d11;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: capitalize;
+  box-shadow: 0 1px 3px #ccc;
 }
